@@ -79,11 +79,75 @@ section {
     z-index: 777;
     content: '';
     position: absolute;
-    background: rgba(3, 96, 251, 0.3);
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #d5a400, #e1e400, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    opacity: 0.7;
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+}
+
+/* rainbow animation keyframe */
+
+@-webkit-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+
+    50% {
+        background-position: 100% 19%
+    }
+
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@-moz-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+
+    50% {
+        background-position: 100% 19%
+    }
+
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@-o-keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+
+    50% {
+        background-position: 100% 19%
+    }
+
+    100% {
+        background-position: 0% 82%
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 82%
+    }
+
+    50% {
+        background-position: 100% 19%
+    }
+
+    100% {
+        background-position: 0% 82%
+    }
 }
 
 .home .content {
@@ -158,13 +222,14 @@ section {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
 }
 
 .button-animate:hover {
     cursor: pointer;
     animation-name: bounce;
     -moz-animation-name: bounce;
-
+    clip-path: none;
 }
 
 
@@ -201,50 +266,6 @@ section {
     object-fit: cover;
 }
 
-.slider-navigation {
-    z-index: 888;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(80px);
-    margin-bottom: 12px;
-}
-
-.slider-navigation .nav-btn {
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    border-radius: 50%;
-    cursor: zoom-in;
-    box-shadow: 0 0 2px rgba(225, 225, 225, 0.5);
-    transition: 0.3s ease;
-}
-
-.slider-navigation .nav-btn.active {
-    background: #000;
-}
-
-.slider-navigation .nav-btn:not(:last-child) {
-    margin-right: 20px;
-}
-
-.slider-navigation .nav-btn:hover {
-    transform: scale(2.5);
-}
-
-.video-slide {
-    position: absolute;
-    width: 100%;
-    clip-path: circle(0% at 0 50%);
-}
-
-.video-slide.active {
-    clip-path: circle(150.0% at 0 50%);
-    transition: 2s ease;
-    transition-property: clip-path;
-}
-
 footer {
     text-align: center;
     padding: 3px;
@@ -255,15 +276,15 @@ footer {
     bottom: 0;
     width: 100%;
     padding-top: 40px;
-    padding-bottom:  20px;
+    padding-bottom: 20px;
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: #7e7e7e;
 }
 
-footer a:hover{
+footer a:hover {
     text-decoration: underline;
     color: #fff;
 }
@@ -336,7 +357,7 @@ footer a:hover{
 
     .menu-btn.active {
         z-index: 999;
-        background: url(close.png)no-repeat;
+        background: url(assets/close.png)no-repeat;
         background-size: 25px;
         background-position: center;
         transition: 0.3s ease;
